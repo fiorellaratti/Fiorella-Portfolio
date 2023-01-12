@@ -183,3 +183,7 @@ header ur li a.active
     color: black;
 }
 
+#seca
+{
+    animation: ease-in 1s;
+}
