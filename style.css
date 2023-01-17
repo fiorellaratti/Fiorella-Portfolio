@@ -110,6 +110,18 @@ section{
     margin-bottom: 10px;
     color: #1db954;
 }
+.sec h4{
+    font-size: 1.2em;
+    font-weight: lighter;
+    margin-bottom: 10px;
+    color: #1db954;
+}
+.sec a{
+
+    font-weight: lighter;
+    margin-bottom: 10px;
+    color: white;
+}
 
 .sec {
     position: relative;
@@ -120,6 +132,11 @@ section{
     font-weight: lighter;
     margin-bottom: 10px;
     color: #fff;
+}
+.sec a:hover, 
+.sec a.active
+{
+    color: #1db954;
 }
 
 header ul
