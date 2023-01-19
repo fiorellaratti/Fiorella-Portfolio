@@ -133,6 +133,18 @@ section{
     margin-bottom: 10px;
     color: #fff;
 }
+.sec p2{
+    font-weight: lighter;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.sec p3{
+    font-weight: lighter;
+    margin-bottom: 10px;
+    color: #fff;
+    text-justify: inter-word;
+}
+
 .sec a:hover, 
 .sec a.active
 {
@@ -203,4 +215,31 @@ header ur li a.active
 #seca
 {
     animation: ease-in 1s;
+}
+
+
+#menu-outer {
+	height: 84px;
+}
+
+.table {
+	display: table;  
+	margin: 0 auto;
+}
+
+ul#horizontal-list {
+    color: white;
+	min-width: 696px;
+	list-style: none;
+    padding-right: 100px;
+	padding-top: 20px;
+	}
+	ul#horizontal-list li {
+		display: inline;
+        padding: 10px 30px;
+	}
+
+#secc p
+{
+    color: #1db954;
 }
