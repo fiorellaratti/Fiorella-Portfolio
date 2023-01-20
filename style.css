@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
+    background-color: #000;
 }
 body
 {
@@ -36,7 +37,7 @@ header u1 li
     list-style: none;
     margin-left: 10px;
 }
-header u1 li a
+header u1 li a, u1 li a i
 {
     text-decoration: none;
     padding: 6px 15px;
@@ -205,10 +206,15 @@ header ur li a
     color: #1ed160;
     border-radius: 20px;
 }
-header ur li a:hover, 
-header ur li a.active
+
+i{
+    background-color: transparent;
+}
+
+header ur li a:hover
 {
-    background: #1db954;
+    transform: scale(2);
+    background-color: #1ed160;
     color: black;
 }
 
@@ -216,6 +222,7 @@ header ur li a.active
 {
     animation: ease-in 1s;
 }
+
 
 
 #menu-outer {
@@ -242,4 +249,23 @@ ul#horizontal-list {
 #secc p
 {
     color: #1db954;
+}
+.project-containers{
+    width: 100%;
+    height: 50vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn{
+
+    padding: 10px, 60px;
+    background: #fff;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 500;
+    border-radius: 30px;
 }
