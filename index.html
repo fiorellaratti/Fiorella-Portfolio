@@ -47,11 +47,42 @@
         <div class="sec" id="secb">
             <h2>Projects</h2>
             <div class="project-containers">
-                <button type= "App" class="btn"> APP </button>
-                <div class = "project-popup">
-                    <h3>APP</h3>
 
-                </div>
+                <ul id="horizontal-list">
+
+                    <li>
+                        <a type= "app" class="btn" onclick="openPopup()"> Mood App </a>
+                        <div class = "project-popup" id="popup">
+                            <h3>Mood Tracker App</h3>
+                            <p>Information here</p>
+                            <button type ="button" onclick="closePopup()"> ok </button>
+                        </div>
+                    </li>
+                    <li>
+                        <a type= "app" class="btn" onclick="openPopup()"> Mood App </a>
+                        <div class = "project-popup" id="popup">
+                            <h3>Arduino Robot</h3>
+                            <p>Information here</p>
+                            <button type ="button" onclick="closePopup()"> ok </button>
+                        </div>
+                    </li>
+                    <li>
+                        <a type= "app" class="btn" onclick="openPopup()"> Mood App </a>
+                        <div class = "project-popup" id="popup">
+                            <h3>Huffman Code Generator</h3>
+                            <p>Information here</p>
+                            <button type ="button" onclick="closePopup()"> ok </button>
+                        </div>
+                    </li>
+                    <li>
+                        <a type= "app" class="btn" onclick="openPopup()"> Mood App </a>
+                        <div class = "project-popup" id="popup">
+                            <h3>Short Film</h3>
+                            <p>Information here</p>
+                            <button type ="button" onclick="closePopup()"> ok </button>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
 
@@ -119,6 +150,13 @@
                 let value = window.scrollY;
                 text.style.marginRight = value * 4 + 'px';
             })
+            let popup = document.getElementById("popup");
+            function openPopup(){
+                popup.classList.add("open-popup");
+            }
+            function closePopup(){
+                popup.classList.remove("open-popup");
+            }
         </script>
     </body>
 </html>
