@@ -53,33 +53,80 @@
                     <li>
                         <a type= "app" class="btn" onclick="openPopup()"> Mood App </a>
                         <div class = "project-popup" id="popup">
+
                             <h3>Mood Tracker App</h3>
-                            <p>Information here</p>
+                            <p>
+                                Developing an app to monitor how <br>
+                                a person’s mood varies using daily <br>
+                                journals to indicate your current <br>
+                                emotions, take notes, and store this <br>
+                                information in a calendar to see <br>
+                                patterns in their mood changes.  <br> <br>
+                                Built the iOS user interface with <br>
+                                the SwiftUI framework using Xcode <br>
+                                to write the code and preview the app.<br> <br>
+                                Worked on a team of 2 over the summer.
+
+                            </p>
                             <button type ="button" onclick="closePopup()"> ok </button>
                         </div>
                     </li>
                     <li>
-                        <a type= "app" class="btn" onclick="openPopup()"> Mood App </a>
-                        <div class = "project-popup" id="popup">
+                        <a type= "robot" class="btn" onclick="openPopupa()"> Arduino Robot </a>
+                        <div class = "project-popupa" id="popupa">
                             <h3>Arduino Robot</h3>
-                            <p>Information here</p>
-                            <button type ="button" onclick="closePopup()"> ok </button>
+                            <p> Designed how to control a robot using an 
+                                Arduino Uno R3 board.<br><br>
+                                
+                                Programmed the main logic to control the 
+                                robot’s movements, using an ultrasonic
+                                sensor to avoid obstacles. <br><br>
+
+                                Applied engineering problem solving
+                                techniques, considered the roles reciprocity, 
+                                teamwork, and reflection play in understanding 
+                                the needs of a collaborator and/or fellow 
+                                design team members through experiential learning.<br><br>
+
+                                Worked on a team of 4 people and assumed 
+                                the role of the Software Engineer.
+                                </p>
+                            <button type ="button" onclick="closePopupa()"> ok </button>
                         </div>
                     </li>
                     <li>
-                        <a type= "app" class="btn" onclick="openPopup()"> Mood App </a>
-                        <div class = "project-popup" id="popup">
+                        <a type= "huffcode" class="btn" onclick="openPopupb()"> Huffman Code </a>
+                        <div class = "project-popupb" id="popupb">
                             <h3>Huffman Code Generator</h3>
-                            <p>Information here</p>
-                            <button type ="button" onclick="closePopup()"> ok </button>
+                            <p>
+                                Implemented a Huffman coding algorithm 
+                                to compress strings without no loss of data. <br><br>
+
+                                Generated a frequency list for each character in 
+                                the string, and then inserted char to frequency 
+                                nodes into a min priority queue to sort them.<br><br>
+                                
+                                Built the Huffman binary tree using the nodes 
+                                which will be used to encode the strings into 
+                                Huffman codes and decompress them to their original string.
+
+                            </p>
+                            <button type ="button" onclick="closePopupb()"> ok </button>
                         </div>
                     </li>
                     <li>
-                        <a type= "app" class="btn" onclick="openPopup()"> Mood App </a>
-                        <div class = "project-popup" id="popup">
+                        <a type= "shortfilm" class="btn" onclick="openPopupc()"> Short Film </a>
+                        <div class = "project-popupc" id="popupc">
                             <h3>Short Film</h3>
-                            <p>Information here</p>
-                            <button type ="button" onclick="closePopup()"> ok </button>
+                            <p>
+                                Worked on a team of 4 people to animate a short 
+                                film using computer animation concepts and techniques.<br><br>
+
+                                Used keyframing, character animation, inverse kinematics, 
+                                expressions and MEL scripting in Maya, dynamic simulation, 
+                                particle effects, and facial animation.
+                            </p>
+                            <button type ="button" onclick="closePopupc()"> ok </button>
                         </div>
                     </li>
                 </ul>
@@ -156,6 +203,28 @@
             }
             function closePopup(){
                 popup.classList.remove("open-popup");
+            }
+            let popupa = document.getElementById("popupa");
+            function openPopupa(){
+                popupa.classList.add("open-popupa");
+            }
+            function closePopupa(){
+                popupa.classList.remove("open-popupa");
+            }
+
+            let popupb = document.getElementById("popupb");
+            function openPopupb(){
+                popupb.classList.add("open-popupb");
+            }
+            function closePopupb(){
+                popupb.classList.remove("open-popupb");
+            }
+            let popupc = document.getElementById("popupc");
+            function openPopupc(){
+                popupc.classList.add("open-popupc");
+            }
+            function closePopupc(){
+                popupc.classList.remove("open-popupc");
             }
         </script>
     </body>
