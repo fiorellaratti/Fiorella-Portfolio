@@ -11,7 +11,15 @@
 *::-webkit-scrollbar {
     display: none;
 }
-
+.blocker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: ' ';
+    background: rgba(0,0,0,.5);
+  }
 body
 {
     min-height: 100vh;
@@ -265,7 +273,7 @@ ul#horizontal-list {
 .btn{
 
     padding: 2rem;
-    background: rgba(77, 77, 77, 1);;
+    background: rgba(77, 77, 77, 1);
     border: 0;
     outline: none;
     cursor: pointer;
@@ -317,14 +325,18 @@ ul#horizontal-list {
     width: 100%;
     margin-top: 50px;
     padding: 10px 0;
-    background: white;
-    color:#1db954;
+    background: rgba(77, 77, 77, 1);
+    color:white;
     border: 0;
     outline: none;
     font-size: 18px;
     border-radius: 4px;
     cursor: pointer;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.project-popup button:hover{
+    color: #1db954;
 }
 .project-popupa{
     width: 400px;
