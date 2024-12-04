@@ -73,20 +73,28 @@ function closeSpotifyPopup() {
 // Update the blocker to handle all popups
 document.addEventListener('DOMContentLoaded', function() {
     const blocker = document.getElementById('blocker');
+    const spotifyPopup = document.getElementById('spotifyPopup');
     
     // Close any open popup when clicking the blocker
-    blocker.addEventListener('click', function() {
-        // Close project popups
-        const projectPopups = document.querySelectorAll('.project-popup');
-        projectPopups.forEach(popup => {
-            popup.classList.remove('open-popup');
-        });
-        
-        // Close Spotify popup
-        const spotifyPopup = document.getElementById('spotifyPopup');
-        spotifyPopup.classList.remove('open-spotify-popup');
-        
-        // Hide the blocker itself
-        blocker.classList.remove('active');
+    blocker.addEventListener('click', function(event) {
+        // Check if the click was directly on the blocker (not its children)
+        if (event.target === blocker) {
+            // Close project popups
+            const projectPopups = document.querySelectorAll('.project-popup');
+            projectPopups.forEach(popup => {
+                popup.classList.remove('open-popup');
+            });
+            
+            // Close Spotify popup
+            spotifyPopup.classList.remove('open-spotify-popup');
+            
+            // Hide the blocker itself
+            blocker.classList.remove('active');
+        }
+    });
+
+    // Prevent popup from closing when clicking inside it
+    spotifyPopup.addEventListener('click', function(event) {
+        event.stopPropagation();
     });
 });
