@@ -19,7 +19,7 @@
     right: 0;
     background: rgba(0, 0, 0, 0.5);
     visibility: hidden;
-    z-index: 1000;
+    z-index: 999;
 }
 
 .blocker.active {
@@ -967,5 +967,11 @@ ul#horizontal-list {
     color: #b3b3b3;
     padding: 8px 0;
     font-size: 14px;
+}
+
+/* Ensure popup content is clickable */
+.spotify-popup * {
+    position: relative;
+    z-index: 1001;
 }
 
