@@ -17,9 +17,15 @@
     left: 0;
     bottom: 0;
     right: 0;
-    content: ' ';
-    background: rgba(0,0,0,.5);
-  }
+    background: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    z-index: 1000;
+}
+
+.blocker.active {
+    visibility: visible;
+}
+
 body
 {
     min-height: 100vh;
@@ -164,59 +170,38 @@ section{
     color: #1db954;
 }
 
-header ul
-{
+header ul, header ur {
     position: fixed;
-    bottom: 30px;
+    bottom: 80px;
+    display: table-column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    z-index: 1001;
+}
+
+header ul {
     left: 0;
-    display: table-column;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5em;
-}
-header ul li
-{
-    list-style: none;
-    margin-left: 20px;
-    margin-bottom: 30px;;
-}
-header ul li a
-{
-    text-decoration: none;
-    padding: 6px 15px;
-    color: #1ed160;
-    border-radius: 20px;
-}
-header ul li a:hover, 
-header ul li a.active
-{
-    background: #1db954;
-    color: black;
 }
 
-
-header ur
-{
-    position: fixed;
-    bottom: 30px;
+header ur {
     right: 30px;
-    display: table-column;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5em;
 }
-header ur li
-{
+
+header ul li, header ur li {
     list-style: none;
-    margin-left: 20px;
-    margin-bottom: 20px;;
+    margin: 0;
+    padding: 0;
 }
-header ur li a
-{
+
+header ul li a, header ur li a {
     text-decoration: none;
-    padding: 6px 15px;
-    color: #1ed160;
-    border-radius: 20px;
+    padding: 10px;
+    display: inline-block;
+}
+
+header ur li a:hover {
+    transform: scale(1.2);
 }
 
 i{
@@ -265,11 +250,85 @@ ul#horizontal-list {
 
 .project-containers{
     width: 100%;
-    height: 20vh;
+    height: auto;
+    padding: 20px 0;
+}
+
+.spotify-albums {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 24px;
+    padding: 20px;
+}
+
+.album-card {
+    background: #181818;
+    padding: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.album-card:hover {
+    background: #282828;
+}
+
+.album-artwork {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.album-artwork img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
+
+.play-overlay i {
+    color: #1db954;
+    font-size: 3em;
+    background: transparent;
+}
+
+.album-card:hover .play-overlay {
+    opacity: 1;
+}
+
+.album-info {
+    background: transparent;
+}
+
+.album-info h3 {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 4px;
+    background: transparent;
+}
+
+.album-info p {
+    color: #b3b3b3;
+    font-size: 14px;
+    background: transparent;
+}
+
 .btn{
 
     padding: 2rem;
@@ -283,61 +342,99 @@ ul#horizontal-list {
     box-shadow:  0 5px 5px rgba(0, 0, 0, 0.2);
 
 }
-.project-popup{
-    width: 400px;
-    height: 400px;
-
-    background: rgba(41, 41, 41, 1);
-    border-radius: 6px;
-    position: absolute;
-    top: 0;
+.project-popup {
+    width: 500px;
+    background: #282828;
+    border-radius: 8px;
+    position: fixed;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%) scale(0.1);
-    text-align: center;
-    padding: 0 30px 30px;
-    color: #333;
+    transform: translate(-50%, -50%) scale(0.1);
     visibility: hidden;
     transition: transform 0.4s, top 0.4s;
-    overflow-y: scroll;
-}
-.project-popup::-webkit-scrollbar {
-    display: none;
+    z-index: 1001;
+    overflow: hidden;
 }
 
-.open-popup{
+.popup-header {
+    position: relative;
+    padding: 24px;
+    background: linear-gradient(transparent, #282828), 
+                var(--popup-image-gradient);
+    color: white;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.popup-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+}
+
+.popup-info {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+}
+
+.popup-info h3 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    background: transparent;
+}
+
+.popup-subtitle {
+    color: #b3b3b3;
+    font-size: 14px;
+    margin-bottom: 16px;
+    background: transparent;
+}
+
+.popup-content {
+    padding: 24px;
+}
+
+.track-list {
+    margin-bottom: 24px;
+}
+
+.track {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    color: #fff;
+    border-bottom: 1px solid #404040;
+    background: transparent;
+}
+
+.track i {
+    color: #1db954;
+    background: transparent;
+}
+
+.track span {
+    background: transparent;
+}
+
+.tech-stack h4 {
+    color: #fff;
+    margin-bottom: 12px;
+    background: transparent;
+}
+
+.project-popup.open-popup {
     visibility: visible;
-    top: 50%;
     transform: translate(-50%, -50%) scale(1);
 }
-.project-popup h3{
-    background-color: rgba(41, 41, 41, 1);
-    color: white;
-    font-size: 38px;
-    font-weight: 500;
-    margin: 30px 0 10px;
-}
-.project-popup p{
-    background-color: rgba(41, 41, 41, 1);
-    color: white;
-    text-align: left;
-}
-.project-popup button{
-    width: 100%;
-    margin-top: 50px;
-    padding: 10px 0;
-    background: rgba(77, 77, 77, 1);
-    color:white;
-    border: 0;
-    outline: none;
-    font-size: 18px;
-    border-radius: 4px;
-    cursor: pointer;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-}
 
-.project-popup button:hover{
-    color: #1db954;
-}
 .project-popupa{
     width: 400px;
     height: 400px;
@@ -489,3 +586,386 @@ ul#horizontal-list {
     cursor: pointer;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
+
+.music-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #282828;
+    padding: 15px 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.song-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 300px;
+    background: transparent;
+}
+
+.album-art {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background: #282828;
+}
+
+.song-details {
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+}
+
+.song-title, .artist-name {
+    background: transparent;
+    color: white;
+}
+
+.song-title {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.artist-name {
+    font-size: 12px;
+    color: #b3b3b3;
+}
+
+.progress-container {
+    flex-grow: 1;
+    background: #404040;
+    height: 4px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.progress-bar {
+    background: #1db954;
+    height: 100%;
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.time-stamps {
+    display: flex;
+    gap: 20px;
+    background: transparent;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+
+.current-time, .total-time {
+    background: transparent;
+}
+
+.spotify-popup {
+    width: 400px;
+    background: rgba(41, 41, 41, 1);
+    border-radius: 6px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 30px;
+    color: white;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    z-index: 1000;
+}
+
+.spotify-popup h3 {
+    background-color: transparent;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.spotify-popup p {
+    background-color: transparent;
+    font-size: 16px;
+    margin-bottom: 25px;
+    color: #b3b3b3;
+}
+
+.spotify-popup .spotify-link {
+    background-color: transparent;
+    margin: 20px 0;
+}
+
+.spotify-popup .spotify-link a {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #1db954;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: transform 0.2s;
+}
+
+.spotify-popup .spotify-link a:hover {
+    transform: scale(1.05);
+    background: #1ed760;
+}
+
+.spotify-popup .spotify-link i {
+    background-color: transparent;
+    margin-right: 8px;
+}
+
+.spotify-popup button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 0;
+    background: rgba(77, 77, 77, 1);
+    color: white;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.spotify-popup button:hover {
+    color: #1db954;
+}
+
+.spotify-popup.open-spotify-popup {
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.blocker {
+    visibility: hidden;
+}
+
+.blocker.active {
+    visibility: visible;
+}
+
+/* Add these media queries at the end of your CSS file */
+
+@media screen and (max-width: 768px) {
+    /* Put ALL your 768px breakpoint styles here */
+}
+
+@media screen and (max-width: 480px) {
+    /* Put ALL your 480px breakpoint styles here */
+}
+
+.social-icons-footer {
+    width: 100%;
+    padding: 20px 0 100px 0; /* Bottom padding to avoid music player overlap */
+    text-align: center;
+    background: #000;
+    position: relative;
+    z-index: 1;
+}
+
+.social-icons-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 1.5em;
+}
+
+.social-icons-container a {
+    color: #1ed160;
+    text-decoration: none;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.social-icons-container a:hover {
+    transform: scale(1.2);
+    background-color: #1ed160;
+    color: black;
+    border-radius: 50%;
+}
+
+.social-icons-container i {
+    background-color: transparent;
+}
+
+/* Update media queries */
+@media screen and (max-width: 768px) {
+    .social-icons-footer {
+        padding-bottom: 120px; /* Increase padding to avoid music player */
+    }
+
+    .social-icons-container {
+        gap: 20px;
+    }
+
+    /* Remove the fixed positioning from the original header icons since we're using the footer ones */
+    header ul, header ur {
+        display: none; /* Hide the original fixed icons */
+    }
+
+    /* Adjust contact section spacing */
+    .sec#secd {
+        padding-bottom: 40px; /* Add some space between contact and social icons */
+    }
+}
+
+/* Additional adjustments for very small screens */
+@media screen and (max-width: 480px) {
+    .social-icons-footer {
+        padding-bottom: 100px; /* Slightly reduce padding on very small screens */
+    }
+
+    .social-icons-container {
+        gap: 15px;
+    }
+
+    /* Adjust music player for very small screens */
+    .music-player {
+        padding: 10px;
+    }
+
+    .song-info {
+        max-width: 120px; /* Reduce song info width */
+    }
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .spotify-albums {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 16px;
+        padding: 16px;
+    }
+}
+
+/* Add new styles for the modern look */
+.spotify-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0;
+    padding: 20px;
+    background: #282828;
+    border-radius: 8px;
+}
+
+.stat-item {
+    text-align: center;
+    background: transparent;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2em;
+    color: #1db954;
+    background: transparent;
+}
+
+.stat-label {
+    color: #b3b3b3;
+    font-size: 0.9em;
+    background: transparent;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+    background: transparent;
+}
+
+.tech-tags span {
+    background: #333;
+    color: #b3b3b3;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+}
+
+.experience-playlist {
+    background: #282828;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.playlist-item {
+    padding: 16px;
+    border-bottom: 1px solid #333;
+    background: transparent !important; /* Force transparent background */
+}
+
+.playlist-item * {
+    background: transparent !important; /* Make all children transparent */
+}
+
+.track-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    margin-bottom: 12px;
+}
+
+.track-title {
+    color: white;
+    font-size: 1.1em;
+    background: transparent;
+}
+
+.track-artist {
+    color: #1db954;
+    background: transparent;
+}
+
+.track-duration {
+    color: #b3b3b3;
+    background: transparent;
+}
+
+.transparent-bg { background: transparent; }
+
+/* Common colors */
+:root {
+    --spotify-green: #1db954;
+    --text-light: #fff;
+    --text-gray: #b3b3b3;
+    --bg-dark: #282828;
+}
+
+/* Common utilities */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spotify-button {
+    background: var(--spotify-green);
+    color: var(--text-light);
+    border-radius: 20px;
+    /* ... other common button styles ... */
+}
+
+/* Update the track details styling */
+.track-details {
+    background: transparent;
+}
+
+.track-details ul {
+    background: transparent;
+    list-style: none;
+    padding: 0;
+}
+
+.track-details li {
+    background: transparent;
+    color: #b3b3b3;
+    padding: 8px 0;
+    font-size: 14px;
+}
+
