@@ -4,19 +4,9 @@
         <title>Portfolio | Vanilla Javascrip</title>
         <link rel="stylesheet" type = "text/css" href="style.css">
         <script src="https://kit.fontawesome.com/2c8dcfb6b9.js" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <header>
-            <ul>
-                <li><a href="https://www.linkedin.com/in/fiorella-ratti-776097231/"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                <li><a href="https://github.com/fiorellaratti"><i class="fa-brands fa-github"></i></a></li>
-            </ul>
-        </header>
-        <header>
-            <ur>
-                <li><a href="#"><i class="fa-solid fa-paw"></i></a></li>
-            </ur>
-        </header>
         <header>
             <u1>
                 <li><a href="#" class="active">Home</a></li>
@@ -37,146 +27,88 @@
         </section>
         <div class="sec" id="seca"> 
             <h2>About me</h2>
-            <p> My name is Fiorella Ratti, I'm a computer science student at University of South Florida <br> 
-            pursuing an economics minor. I have worked on different projects towards my degree as well as <br>
-            personal projects. I am currently looking for a software engineer internship. <br> <br>
-            I am passionate about Machine Learning and Sentiment analysis.
-            </p>                
+            <p>Software Engineer at Accusoft with a passion for AI and Machine Learning. Currently working 
+            on innovative solutions using language models and educational software. I graduated from the 
+            University of South Florida with a B.S. in Computer Science and a minor in Economics.</p>
+            <div class="spotify-stats">
+                <div class="stat-item">
+                    <span class="stat-number">3.62</span>
+                    <span class="stat-label">GPA</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">200+</span>
+                    <span class="stat-label">Students Mentored</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15%</span>
+                    <span class="stat-label">Accuracy Increase</span>
+                </div>
+            </div>
         </div>
     
         <div class="sec" id="secb">
-            <h2>Projects</h2>
+            <h2>Featured Projects</h2>
             <div class="project-containers">
-
-                <ul id="horizontal-list">
-
-                    <li>
-                        <a type= "app" class="btn" onclick="openPopup()"> Mood App </a>
-                        <div class = "project-popup" id="popup">
-                           
-                            <h3>Mood Tracker App</h3>
-                            <p>
-                                Developing an app to monitor how <br>
-                                a person’s mood varies using daily <br>
-                                journals to indicate your current <br>
-                                emotions, take notes, and store this <br>
-                                information in a calendar to see <br>
-                                patterns in their mood changes.  <br> <br>
-                                Built the iOS user interface with <br>
-                                the SwiftUI framework using Xcode <br>
-                                to write the code and preview the app.<br> <br>
-                                Worked on a team of 2 over the summer.
-
-                            </p>
-                            <button type ="button" onclick="closePopup()"> ok </button>
+                <ul id="horizontal-list" class="spotify-albums">
+                    <li class="album-card">
+                        <div class="album-artwork" onclick="openPopup('lgrasp')">
+                            <img src="projectImg/LanguageGRASP.png" alt="LGRASP Lab">
+                            <div class="play-overlay">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="album-info">
+                            <h3>Language GRASP Lab</h3>
+                            <p>AI Research • Memory Module</p>
+                            <div class="tech-tags">
+                                <span>PyTorch</span>
+                                <span>NLTK</span>
+                                <span>Deep Learning</span>
+                            </div>
                         </div>
                     </li>
-                    <li>
-                        <a type= "robot" class="btn" onclick="openPopupa()"> Arduino Robot </a>
-                        <div class = "project-popupa" id="popupa">
-                            <h3>Arduino Robot</h3>
-                            <p> Designed how to control a robot using an 
-                                Arduino Uno R3 board.<br><br>
-                                
-                                Programmed the main logic to control the 
-                                robot’s movements, using an ultrasonic
-                                sensor to avoid obstacles. <br><br>
-
-                                Applied engineering problem solving
-                                techniques, considered the roles reciprocity, 
-                                teamwork, and reflection play in understanding 
-                                the needs of a collaborator and/or fellow 
-                                design team members through experiential learning.<br><br>
-
-                                Worked on a team of 4 people and assumed 
-                                the role of the Software Engineer.
-                                </p>
-                            <button type ="button" onclick="closePopupa()"> ok </button>
+                    
+                    <li class="album-card">
+                        <div class="album-artwork" onclick="openPopup('teachabull')">
+                            <img src="projectImg/tutor.png" alt="Teach-a-Bull">
+                            <div class="play-overlay">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="album-info">
+                            <h3>Teach-a-Bull AI Tutor</h3>
+                            <p>LLM • Educational Software</p>
+                            <div class="tech-tags">
+                                <span>GPT-4</span>
+                                <span>Python</span>
+                                <span>AWS</span>
+                            </div>
                         </div>
                     </li>
-                    <li>
-                        <a type= "huffcode" class="btn" onclick="openPopupb()"> Huffman Code </a>
-                        <div class = "project-popupb" id="popupb">
-                            <h3>Huffman Code Generator</h3>
-                            <p>
-                                Implemented a Huffman coding algorithm 
-                                to compress strings without no loss of data. <br><br>
-
-                                Generated a frequency list for each character in 
-                                the string, and then inserted char to frequency 
-                                nodes into a min priority queue to sort them.<br><br>
-                                
-                                Built the Huffman binary tree using the nodes 
-                                which will be used to encode the strings into 
-                                Huffman codes and decompress them to their original string.
-
-                            </p>
-                            <button type ="button" onclick="closePopupb()"> ok </button>
-                        </div>
-                    </li>
-                    <li>
-                        <a type= "shortfilm" class="btn" onclick="openPopupc()"> Short Film </a>
-                        <div class = "project-popupc" id="popupc">
-                            <h3>Short Film</h3>
-                            <p>
-                                Worked on a team of 4 people to animate a short 
-                                film using computer animation concepts and techniques.<br><br>
-
-                                Used keyframing, character animation, inverse kinematics, 
-                                expressions and MEL scripting in Maya, dynamic simulation, 
-                                particle effects, and facial animation.
-                            </p>
-                            <button type ="button" onclick="closePopupc()"> ok </button>
-                        </div>
-                    </li>
+                    <!-- Add more projects as needed -->
                 </ul>
             </div>
         </div>
 
         <div class="sec" id="secc">
-            <h2>Skills</h2>
-            <p> Progamming Languages</p>
-            <div id="menu-outer">
-                <div class="table">
-                  <ul id="horizontal-list">
-                    <li>Python</li>
-                    <li>C</li>
-                    <li>C++</li>
-                    <li>Java</li>
-                    <li>SwiftUI</li>
-                    <li>MEL</li>
-                    <li>CSS</li>
-                  </ul>
+            <h2>Experience</h2>
+            <div class="experience-playlist">
+                <div class="playlist-item">
+                    <div class="track-info">
+                        <span class="track-title">Software Engineer I</span>
+                        <span class="track-artist">Accusoft</span>
+                        <span class="track-duration">2024 - Present</span>
+                    </div>
+                    <div class="track-details">
+                        <ul>
+                            <li>Solved customer triage issues for JavaScript and .NET SDK products</li>
+                            <li>Implemented workflow automation system</li>
+                            <li>Worked with Docker and Kubernetes</li>
+                        </ul>
+                    </div>
                 </div>
-              </div>
-            <br />
-            <p></p>
-            <p> Tools</p>            
-            <div id="menu-outer">
-                <div class="table">
-                  <ul id="horizontal-list">
-                    <li>VSCode</li>
-                    <li>Unix/Linux environment</li>
-                    <li>Git</li>
-                    <li>IDLE</li>
-                    <li>Autodesk</li>
-                    <li>Xcode</li>
-                    <li>Arduino</li>
-                    <li>HTML</li>
-                  </ul>
-                </div>
-              </div>
-            <br />
-            <p></p>
-
-            <p> Multilingual</p>
-            <div id="menu-outer">
-            <ul id="horizontal-list">
-            <div class="table">
-                <li>Fluent written and conversational English and Spanish</li>
+                <!-- Add more experiences -->
             </div>
-            </ul>
-        </div>
         </div>
         <div class="sec" id="secd">
             <h2>Contact</h2>
@@ -191,41 +123,124 @@
             </p>
         </div>
 
-        <script>
-            let text = document.getElementById('text');
-            window.addEventListener('scroll', function(){
-                let value = window.scrollY;
-                text.style.marginRight = value * 4 + 'px';
-            })
-            let popup = document.getElementById("popup");
-            function openPopup(){
-                popup.classList.add("open-popup");
-            }
-            function closePopup(){
-                popup.classList.remove("open-popup");
-            }
-            let popupa = document.getElementById("popupa");
-            function openPopupa(){
-                popupa.classList.add("open-popupa");
-            }
-            function closePopupa(){
-                popupa.classList.remove("open-popupa");
-            }
+        <div class="social-icons-footer">
+            <div class="social-icons-container">
+                <a href="https://www.linkedin.com/in/fiorella-ratti-776097231/"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/fiorellaratti"><i class="fa-brands fa-github"></i></a>
+                <a href="#" onclick="openSpotifyPopup()"><i class="fa-solid fa-paw"></i></a>
+            </div>
+        </div>
 
-            let popupb = document.getElementById("popupb");
-            function openPopupb(){
-                popupb.classList.add("open-popupb");
-            }
-            function closePopupb(){
-                popupb.classList.remove("open-popupb");
-            }
-            let popupc = document.getElementById("popupc");
-            function openPopupc(){
-                popupc.classList.add("open-popupc");
-            }
-            function closePopupc(){
-                popupc.classList.remove("open-popupc");
-            }
-        </script>
+        <div class="music-player">
+            <div class="song-info">
+                <img src="projectImg/guppy.jpeg" alt="Album Art" class="album-art">
+                <div class="song-details">
+                    <span class="song-title">Portfolio Experience</span>
+                    <span class="artist-name">Fiorella Ratti</span>
+                </div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="time-stamps">
+                <span class="current-time">0:00</span>
+                <span class="total-time">3:45</span>
+            </div>
+        </div>
+
+        <div class="spotify-popup" id="spotifyPopup">
+            <h3>🎵 Set the Mood for Your Portfolio Review 🎵</h3>
+            <p>Because nothing says "hire me" like some Panic! At The Disco</p>
+            <div class="spotify-link">
+                <a href="https://open.spotify.com/playlist/1sXLTmx3HkyhibxRZ52dfD?si=VHcQ1nICRUiOwUlvxntclQ" target="_blank">
+                    <i class="fa-brands fa-spotify"></i> Open Playlist
+                </a>
+            </div>
+            <button type="button" onclick="closeSpotifyPopup()">Close</button>
+        </div>
+        <div class="blocker" id="blocker" onclick="closeSpotifyPopup()"></div>
+
+        <div class="project-popup" id="lgrasp">
+            <div class="popup-header">
+                <img src="projectImg/LanguageGRASP.png" alt="LGRASP Lab" class="popup-cover">
+                <div class="popup-info">
+                    <h3>Language GRASP Lab</h3>
+                    <p class="popup-subtitle">Research Project • 2023-Present</p>
+                    <a href="https://cse.usf.edu/~genekim/lgrasp/people.html" class="spotify-button" target="_blank">
+                        <i class="fa-solid fa-link"></i> Visit Project
+                    </a>
+                </div>
+            </div>
+            <div class="popup-content">
+                <div class="track-list">
+                    <div class="track">
+                        <i class="fa-solid fa-code"></i>
+                        <span>Developed adaptive memory module for educational software</span>
+                    </div>
+                    <div class="track">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Achieved 15% increase in accuracy over other methods</span>
+                    </div>
+                    <div class="track">
+                        <i class="fa-solid fa-brain"></i>
+                        <span>Optimized for classification across extended temporal windows</span>
+                    </div>
+                </div>
+                <div class="tech-stack">
+                    <h4>Tech Stack</h4>
+                    <div class="tech-tags">
+                        <span>PyTorch</span>
+                        <span>NLTK</span>
+                        <span>Deep Learning</span>
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                    </div>
+                </div>
+            </div>
+            <button type="button" onclick="closePopup('lgrasp')">Close</button>
+        </div>
+
+        <div class="project-popup" id="teachabull">
+            <div class="popup-header">
+                <img src="projectImg/tutor.png" alt="Teach-a-Bull" class="popup-cover">
+                <div class="popup-info">
+                    <h3>Teach-a-Bull AI Tutor</h3>
+                    <p class="popup-subtitle">Research Project • 2023-Present</p>
+                    <a href="https://cse.usf.edu/~genekim/lgrasp/people.html" class="spotify-button" target="_blank">
+                        <i class="fa-solid fa-link"></i> Visit Project
+                    </a>
+                </div>
+            </div>
+            <div class="popup-content">
+                <div class="track-list">
+                    <div class="track">
+                        <i class="fa-solid fa-code"></i>
+                        <span>Developed adaptive memory module for educational software</span>
+                    </div>
+                    <div class="track">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Achieved 15% increase in accuracy over other methods</span>
+                    </div>
+                    <div class="track">
+                        <i class="fa-solid fa-brain"></i>
+                        <span>Optimized for classification across extended temporal windows</span>
+                    </div>
+                </div>
+                <div class="tech-stack">
+                    <h4>Tech Stack</h4>
+                    <div class="tech-tags">
+                        <span>PyTorch</span>
+                        <span>NLTK</span>
+                        <span>Deep Learning</span>
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                    </div>
+                </div>
+            </div>
+            <button type="button" onclick="closePopup('lgrasp')">Close</button>
+        </div>
+        </div>
+
+        <script src="script.js"></script>
     </body>
 </html>
