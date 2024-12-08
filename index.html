@@ -135,8 +135,8 @@
             <div class="song-info">
                 <img src="projectImg/guppy.jpeg" alt="Album Art" class="album-art">
                 <div class="song-details">
-                    <span class="song-title">Portfolio Experience</span>
-                    <span class="artist-name">Fiorella Ratti</span>
+                    <span class="song-title">Python</span>
+                    <span class="artist-name">Programming Language</span>
                 </div>
             </div>
             <div class="progress-container">
@@ -145,6 +145,23 @@
             <div class="time-stamps">
                 <span class="current-time">0:00</span>
                 <span class="total-time">3:45</span>
+            </div>
+            <div class="player-controls">
+                <button class="control-btn" onclick="toggleShuffle()" id="shuffle-btn">
+                    <i class="fas fa-random"></i>
+                </button>
+                <button class="control-btn" onclick="previousSkill()">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button class="control-btn play-btn" onclick="togglePlay()" id="play-btn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="control-btn" onclick="nextSkill()">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+                <button class="control-btn" onclick="toggleQueue()" id="queue-btn">
+                    <i class="fas fa-list"></i>
+                </button>
             </div>
         </div>
 
@@ -215,15 +232,15 @@
                 <div class="track-list">
                     <div class="track">
                         <i class="fa-solid fa-code"></i>
-                        <span>Developed adaptive memory module for educational software</span>
+                        <span>Collaborated in an Agile team to envision a personalized Tutor software as a service oriented around embodying a tutor that _plans an educational journey for a user (Chapters, Lessons, Presentations, Homework, Evaluation, Schedule).</span>
                     </div>
                     <div class="track">
                         <i class="fa-solid fa-chart-line"></i>
-                        <span>Achieved 15% increase in accuracy over other methods</span>
+                        <span>Engineered an iterative prompting scheme model for language models for generating documents via a tree progression and _construction of data structures, where the output of one layer becomes the input of the next.</span>
                     </div>
                     <div class="track">
                         <i class="fa-solid fa-brain"></i>
-                        <span>Optimized for classification across extended temporal windows</span>
+                        <span>Established a formal method for implementing LLMs as Actors in Text-Based Environments with promising results</span>
                     </div>
                 </div>
                 <div class="tech-stack">
@@ -239,6 +256,12 @@
             </div>
             <button type="button" onclick="closePopup('lgrasp')">Close</button>
         </div>
+        </div>
+
+        <div class="queue-popup" id="queuePopup">
+            <div class="queue-list">
+                <!-- Will be populated by JavaScript -->
+            </div>
         </div>
 
         <script src="script.js"></script>
