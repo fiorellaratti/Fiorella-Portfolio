@@ -1227,16 +1227,12 @@ ul#horizontal-list {
     background: #333;
 }
 
-.skill-number {
-    color: #b3b3b3;
-    font-size: 16px;
-    text-align: right;
-}
 
 .skill-cover {
     position: relative;
-    width: 48px;
-    height: 48px;
+    width: 45px;
+    height: 45px;
+    background: transparent;
 }
 
 .skill-cover img {
@@ -1250,28 +1246,26 @@ ul#horizontal-list {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    background: transparent;
 }
 
 .skill-name {
     color: #fff;
     font-size: 16px;
+    background: transparent;
 }
 
 .skill-category {
     color: #b3b3b3;
-    font-size: 14px;
+    font-size: 12px;
+    background: transparent;
 }
 
-.skill-duration {
-    color: #b3b3b3;
-    font-size: 14px;
-    text-align: right;
-}
 
 .play-overlay {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 550%;
     transform: translate(-50%, -50%);
     background: #1db954;
     width: 24px;
