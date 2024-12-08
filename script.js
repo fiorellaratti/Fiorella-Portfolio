@@ -115,8 +115,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Skills data structure
 const skillsLibrary = {
-    'Programming Languages': ['Java', 'Python', 'C++', 'C', 'SwiftUI', 'R Studio', 'MEL', 'CSS', 'HTML', 'JavaScript/TypeScript'],
-    'Tools': ['Kubernetes', 'Docker', 'Torchserve', 'Postgres', 'Nginx', 'llama.cpp', 'AWS', 'Node', 'Django', 'Unix/Linux', 'Firebase'],
+    'Languages': ['Java', 'Python', 'C++', 'C', 'SwiftUI', 'R Studio', 'CSS', 'HTML', 'JavaScript','TypeScript'],
+    'Tools': ['Kubernetes', 'Docker', 'Postgres', 'Nginx', 'llama.cpp', 'AWS', 'Node', 'Django', 'Unix-Linux', 'Firebase', 'FDK', 'Git'],
     'Libraries': ['NumPy', 'Tensorflow', 'PyTorch', 'Pandas', 'Pygame', 'Matplotlib', 'NLTK', 'sklearn', 'huggingface', 'Transformers']
 };
 
@@ -192,7 +192,7 @@ function toggleQueue() {
     const queueList = document.querySelector('.queue-list');
     queueList.innerHTML = `
         <div class="queue-header">
-            <h3>Queue</h3>
+            <h3>Queue - My Skills</h3>
         </div>
         
         <div class="queue-section">
@@ -204,7 +204,7 @@ function toggleQueue() {
         </div>
         
         <div class="queue-section">
-            <div class="queue-section-header">Next in Queue</div>
+            <div class="queue-section-header">Next in: My Skills</div>
             ${skillsQueue.map((item, index) => 
                 index > currentSkillIndex ? `
                     <div class="queue-item">
@@ -221,5 +221,50 @@ function toggleQueue() {
 document.addEventListener('DOMContentLoaded', function() {
     initializeQueue();
     updateCurrentSkill();
+    renderSkillsList();
 });
+
+function playSkill(skill, category) {
+    // Find the skill in the queue
+    const skillIndex = skillsQueue.findIndex(item => 
+        item.skill === skill && item.category === category
+    );
+    
+    if (skillIndex !== -1) {
+        currentSkillIndex = skillIndex;
+        updateCurrentSkill();
+        
+        // Start playing if not already playing
+        if (!isPlaying) {
+            togglePlay();
+        }
+    }
+}
+
+function renderSkillsList() {
+    const skillsList = document.getElementById('skillsList');
+    let skillsHTML = '';
+
+    // Loop through each category in skillsLibrary
+    for (let category in skillsLibrary) {
+        skillsLibrary[category].forEach(skill => {
+            skillsHTML += `
+                <div class="skill-item" onclick="playSkill('${skill}', '${category}')">
+                    <div class="skill-cover">
+                        <img src="skillsImg/${skill.toLowerCase()}.png" alt="${skill}">
+                        <div class="play-overlay">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="skill-info">
+                        <span class="skill-name">${skill}</span>
+                        <span class="skill-category">${category}</span>
+                    </div>
+                </div>
+            `;
+        });
+    }
+    
+    skillsList.innerHTML = skillsHTML;
+}
 
