@@ -150,8 +150,12 @@ section{
 .sec p{
     font-size: 1.2em;
     font-weight: lighter;
-    margin-bottom: 10px;
+    margin-bottom: 1.5em;
+    line-height: 1.6;
     color: #fff;
+}
+.sec p:last-of-type {
+    margin-bottom: 2em; /* Extra space before the stats section */
 }
 .sec p2{
     font-weight: lighter;
