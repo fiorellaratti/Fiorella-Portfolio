@@ -409,10 +409,12 @@ ul#horizontal-list {
 
 .popup-content {
     padding: 24px;
+    background: transparent;
 }
 
 .track-list {
     margin-bottom: 24px;
+    background: transparent;
 }
 
 .track {
@@ -433,11 +435,33 @@ ul#horizontal-list {
 .track span {
     background: transparent;
 }
+.tech-stack {
+    background: transparent;
+}
 
 .tech-stack h4 {
     color: #fff;
     margin-bottom: 12px;
     background: transparent;
+}
+
+.tech-tags {
+    background: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-tags span {
+    background: rgba(255, 255, 255, 0.1);  /* Semi-transparent white background */
+    color: white;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 0.9em;
+    transition: background 0.2s;
+}
+.tech-tags span:hover {
+    background: rgba(255, 255, 255, 0.2);  /* Slightly more opaque on hover */
 }
 
 .project-popup.open-popup {
@@ -1274,8 +1298,61 @@ ul#horizontal-list {
 @media screen and (min-width: 768px) {
     .skills-list {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 16px;
     }
+}
+
+.guppy-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #282828;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    z-index: 1000;
+    text-align: center;
+}
+
+.guppy-large {
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background: transparent;
+}
+
+.guppy-message {
+    font-size: 1.2em;
+    color: white;
+    margin: 10px 0;
+    background: transparent;
+}
+
+.album-art {
+    cursor: pointer;
+}
+
+/* Add styles for the close button */
+.guppy-popup button {
+    padding: 10px 20px;
+    background: #1db954;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.guppy-popup button:hover {
+    background: #1ed760;
+}
+
+/* Make sure the popup content has transparent background */
+.popup-content {
+    background: transparent;
 }
 

@@ -268,3 +268,13 @@ function renderSkillsList() {
     skillsList.innerHTML = skillsHTML;
 }
 
+function showGuppyPopup() {
+    document.getElementById('guppyPopup').style.display = 'block';
+    document.getElementById('blocker').style.display = 'block';
+}
+
+function closeGuppyPopup() {
+    document.getElementById('guppyPopup').style.display = 'none';
+    document.getElementById('blocker').style.display = 'none';
+}
+
