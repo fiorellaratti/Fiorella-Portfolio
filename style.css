@@ -1350,3 +1350,95 @@ ul#horizontal-list {
     background: transparent;
 }
 
+.contact-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+.contact-card {
+    background: rgba(30, 30, 30, 0.8);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 250px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    background: rgba(40, 40, 40, 0.9);
+}
+
+.contact-card i {
+    font-size: 2rem;
+    color: #1DB954;
+    margin-bottom: 1rem;
+}
+
+.contact-card h4 {
+    color: #fff;
+    margin-bottom: 1rem;
+    background: transparent;
+}
+
+.contact-card a {
+    color: #1DB954;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    background: transparent;
+}
+
+.contact-card a:hover {
+    color: #fff;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    background: transparent;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.coming-soon .album-artwork {
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.coming-soon-overlay {
+    text-align: center;
+    color: white;
+}
+
+.coming-soon-overlay i {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.coming-soon-overlay span {
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.coming-soon {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.coming-soon:hover {
+    opacity: 1;
+}
+
