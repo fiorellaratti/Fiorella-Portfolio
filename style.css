@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com');
-@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
 *
 {
     margin: 0;
@@ -604,15 +605,15 @@ ul#horizontal-list {
     display: flex;
     align-items: center;
     gap: 10px;
-    width: 300px;
+    min-width: 180px;
     background: transparent;
 }
 
 .album-art {
-    width: 40px;
-    height: 40px;
+    width: 56px;  /* Fixed size for the album art */
+    height: 56px;
+    object-fit: cover;
     border-radius: 4px;
-    background: #282828;
 }
 
 .song-details {
@@ -621,19 +622,17 @@ ul#horizontal-list {
     background: transparent;
 }
 
-.song-title, .artist-name {
-    background: transparent;
-    color: white;
-}
-
 .song-title {
+    color: white;
     font-size: 14px;
+    background: transparent;
     font-weight: 500;
 }
 
 .artist-name {
     font-size: 12px;
     color: #b3b3b3;
+    background: transparent;
 }
 
 .progress-container {
@@ -642,11 +641,15 @@ ul#horizontal-list {
     height: 4px;
     border-radius: 2px;
     cursor: pointer;
+    position: relative;
 }
 
 .progress-bar {
-    background: #1db954;
+    position: absolute;
+    left: 0;
+    top: 0;
     height: 100%;
+    background: #1db954;
     border-radius: 2px;
     width: 0%;
     transition: width 0.1s linear;
@@ -655,13 +658,26 @@ ul#horizontal-list {
 .time-stamps {
     display: flex;
     gap: 20px;
-    background: transparent;
     color: #b3b3b3;
     font-size: 12px;
+    background: transparent;
+    min-width: 100px;
 }
 
 .current-time, .total-time {
     background: transparent;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: transparent;
+    margin-left: auto;
+}
+
+.social-icons-footer {
+    margin-bottom: 100px;
 }
 
 .spotify-popup {
@@ -973,5 +989,133 @@ ul#horizontal-list {
 .spotify-popup * {
     position: relative;
     z-index: 1001;
+}
+
+/* Update player controls styling */
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: transparent;
+}
+
+.control-btn {
+    background: transparent;
+    border: none;
+    color: #b3b3b3;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 8px;
+    transition: color 0.2s;
+}
+
+.control-btn:hover {
+    color: #fff;
+}
+
+.control-btn.active {
+    color: #1db954;
+}
+
+.play-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #fff;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Update queue popup styling */
+.queue-popup {
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+    width: 300px;
+    background: #282828;
+    border-radius: 8px;
+    padding: 0;
+    display: none;
+    max-height: 70vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+}
+
+.queue-popup::-webkit-scrollbar {
+    width: 8px;
+}
+
+.queue-popup::-webkit-scrollbar-thumb {
+    background: #535353;
+    border-radius: 4px;
+}
+
+.queue-popup::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.queue-header {
+    padding: 16px 20px;
+    background: #181818;
+    border-radius: 8px 8px 0 0;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.queue-header h3 {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    background: transparent;
+    margin: 0;
+}
+
+.queue-section {
+    padding: 8px 0;
+}
+
+.queue-section-header {
+    padding: 8px 20px;
+    color: #b3b3b3;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: transparent;
+}
+
+.queue-item {
+    padding: 8px 20px;
+    display: flex;
+    justify-content: space-between;
+    color: #b3b3b3;
+    transition: background 0.2s;
+    cursor: default;
+}
+
+.queue-item:hover {
+    background: #333;
+}
+
+.queue-item.current {
+    color: #1db954;
+}
+
+.queue-item .queue-title {
+    font-size: 14px;
+    background: transparent;
+}
+
+.queue-item .queue-artist {
+    font-size: 12px;
+    color: #b3b3b3;
+    background: transparent;
+}
+
+.queue-popup.show {
+    display: block;
 }
 
