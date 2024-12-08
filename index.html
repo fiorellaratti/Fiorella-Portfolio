@@ -5,6 +5,8 @@
         <link rel="stylesheet" type = "text/css" href="style.css">
         <script src="https://kit.fontawesome.com/2c8dcfb6b9.js" crossorigin="anonymous"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     </head>
     <body>
         <header>
@@ -24,9 +26,9 @@
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Raleway:wght@500&family=Roboto:wght@100;400&family=Varela+Round&display=swap" rel="stylesheet">            <h2 id="text">Fiorella Ratti</h2>
+            <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Raleway:wght@500&family=Roboto:wght@100;400&family=Varela+Round&display=swap" rel="stylesheet">            <h2 id="text" class="animate__animated animate__fadeIn">Fiorella Ratti</h2>
         </section>
-        <div class="sec" id="seca"> 
+        <div class="sec" id="seca" data-aos="fade-up"> 
             <h2>About me</h2>
             <p>Hi there! I'm Fiorella Ratti, a passionate software engineer with a background in building scalable backend systems and innovative solutions for data-driven applications. Whether I'm optimizing API integrations, designing metadata pipelines, or mentoring future engineers, I bring creativity, precision, and a team-first attitude to everything I do.</p>
 
@@ -36,7 +38,7 @@
                 
             <p>When I'm not coding, you can find me in pilates classes, perfecting my matcha-making skills, or listening to Spotify playlists that fuel my focus and creativity. I strongly believe technology and music share a universal language that connects us all — so hit play and take a look around!</p>
                 
-            <div class="spotify-stats">
+            <div class="spotify-stats" data-aos="fade-up" data-aos-delay="200">
                 <div class="stat-item">
                     <span class="stat-number">3.62</span>
                     <span class="stat-label">GPA</span>
@@ -52,11 +54,11 @@
             </div>
         </div>
     
-        <div class="sec" id="secb">
+        <div class="sec" id="secb" data-aos="fade-up">
             <h2>Featured Projects</h2>
             <div class="project-containers">
                 <ul id="horizontal-list" class="spotify-albums">
-                    <li class="album-card">
+                    <li class="album-card" data-aos="zoom-in" data-aos-delay="100">
                         <div class="album-artwork" onclick="openPopup('lgrasp')">
                             <img src="projectImg/LanguageGRASP.png" alt="LGRASP Lab">
                             <div class="play-overlay">
@@ -74,7 +76,7 @@
                         </div>
                     </li>
                     
-                    <li class="album-card">
+                    <li class="album-card" data-aos="zoom-in" data-aos-delay="200">
                         <div class="album-artwork" onclick="openPopup('teachabull')">
                             <img src="projectImg/tutor.png" alt="Teach-a-Bull">
                             <div class="play-overlay">
@@ -88,6 +90,8 @@
                                 <span>GPT-4</span>
                                 <span>Python</span>
                                 <span>AWS</span>
+                                <span>FastAPI</span>
+                                <span>LangChain</span>
                             </div>
                         </div>
                     </li>
@@ -186,7 +190,7 @@
 
         <div class="music-player">
             <div class="song-info">
-                <img src="projectImg/guppy.jpeg" alt="Album Art" class="album-art">
+                <img src="projectImg/guppy.jpeg" alt="Album Art" class="album-art" onclick="showGuppyPopup()">
                 <div class="song-details">
                     <span class="song-title">Python</span>
                     <span class="artist-name">Programming Language</span>
@@ -267,7 +271,6 @@
                     </div>
                 </div>
             </div>
-            <button type="button" onclick="closePopup('lgrasp')">Close</button>
         </div>
 
         <div class="project-popup" id="teachabull">
@@ -285,29 +288,28 @@
                 <div class="track-list">
                     <div class="track">
                         <i class="fa-solid fa-code"></i>
-                        <span>Collaborated in an Agile team to envision a personalized Tutor software as a service oriented around embodying a tutor that _plans an educational journey for a user (Chapters, Lessons, Presentations, Homework, Evaluation, Schedule).</span>
+                        <span>Developed an AI-powered tutoring system that creates personalized learning paths with structured content and assessments</span>
                     </div>
                     <div class="track">
                         <i class="fa-solid fa-chart-line"></i>
-                        <span>Engineered an iterative prompting scheme model for language models for generating documents via a tree progression and _construction of data structures, where the output of one layer becomes the input of the next.</span>
+                        <span>Built a multi-stage LLM system that generates educational content through progressive refinement</span>
                     </div>
                     <div class="track">
                         <i class="fa-solid fa-brain"></i>
-                        <span>Established a formal method for implementing LLMs as Actors in Text-Based Environments with promising results</span>
+                        <span>Implemented innovative LLM-based interactions for enhanced learning experiences</span>
                     </div>
                 </div>
                 <div class="tech-stack">
                     <h4>Tech Stack</h4>
                     <div class="tech-tags">
-                        <span>PyTorch</span>
-                        <span>NLTK</span>
-                        <span>Deep Learning</span>
+                        <span>GPT-4</span>
                         <span>Python</span>
-                        <span>TensorFlow</span>
+                        <span>AWS</span>
+                        <span>FastAPI</span>
+                        <span>LangChain</span>
                     </div>
                 </div>
             </div>
-            <button type="button" onclick="closePopup('lgrasp')">Close</button>
         </div>
         </div>
 
@@ -317,6 +319,21 @@
             </div>
         </div>
 
+        <div class="guppy-popup" id="guppyPopup">
+            <div class="popup-content">
+                <img src="projectImg/guppy.jpeg" alt="Guppy" class="guppy-large">
+                <p class="guppy-message">Meow! Guppy says hi! 😺</p>
+            </div>
+            <button type="button" onclick="closeGuppyPopup()">Bye Guppy</button>
+        </div>
+
         <script src="script.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 1000,
+                once: true
+            });
+        </script>
     </body>
 </html>
